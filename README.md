@@ -11,6 +11,16 @@ import "github.com/tobima/smgw-discover-go/smgw"
 smgwURLHost, err := smgw.Discover()
 
 ```
+
+## Example
+See the [example](./example/main.go) folder for a complete example that discovers the Smart Meter Gateway HAN interface and performs a simple HTTPS GET request to the smart meter gateway.
+
+```console
+:~/smgw-discover-go$ go run ./example/main.go
+Using host: [fe80::dead:beef:cafe:babe%25eth1]
+Response Status: 200 OK
+```
+
 ## Requirements
 Requires direct connection to the Smart Meter Gateway HAN interface.
 
