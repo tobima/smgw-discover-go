@@ -3,9 +3,20 @@ Go libary to discover the IPv6 link local address for the HAN interface of a Ger
 
 It's known to work with EMH Casa 1.1.
 
+## API Overview
+```go
+import "github.com/tobima/smgw-discover-go/smgw"
+
+// Discover the Smart Meter Gateway HAN interface URL host (IPv6 link local address)
+smgwURLHost, err := smgw.Discover()
+
+```
+## Requirements
 Requires direct connection to the Smart Meter Gateway HAN interface.
+
 **BSI-compliant**: The HAN interface must be operated in a separate network
  isolated from the internet (BSI TR-03109).
+
 **Network setup**: Typically subnet without default route. No IPv4 address configuration required. IPv6 link local addresse are sufficient. 
 
 ## Disclaimer
