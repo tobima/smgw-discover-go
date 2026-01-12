@@ -24,7 +24,12 @@ func main() {
 		ForceAttemptHTTP2: false,
 	}
 	client := &http.Client{Transport: tr}
-	resp, err := client.Get("https://" + host)
+	req, err := http.NewRequest("GET", "https://"+host, nil)
+	if err != nil {
+		panic(err)
+	}
+	req.Header.Set("host", "smgw.local")
+	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
 	}
